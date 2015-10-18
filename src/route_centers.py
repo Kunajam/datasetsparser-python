@@ -76,7 +76,8 @@ class RouteCentersFileAnalyzer:
         print 'writing to file %s.json' %(filename)
 
         output = open( "datasets/"+filename+".json", "w+")
-        output.write( str( self.getData() ) )
+        import json
+        output.write( str( json.dumps(self.getData()) ) )
         output.close()
 
     def getData( self ):
